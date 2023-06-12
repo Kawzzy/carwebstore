@@ -5,13 +5,14 @@ import React from "react";
 
 const CustomButton = ({
   title,
+  btnType = "button",
   containerStyles,
   handleClick,
 }: ICustomButton) => {
   return (
     <button
       disabled={false}
-      type={"button"}
+      type={btnType}
       className={`custom-btn ${containerStyles}`}
       onClick={handleClick}
     >
