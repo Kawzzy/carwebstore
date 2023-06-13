@@ -31,7 +31,7 @@ const CarCard = ({ car }: ICarCard) => {
         <span className="self-end text-[14px] font-medium">/day</span>
       </p>
 
-      <div className="relative w-full h-40 mt-3 object-contain">
+      <div className="relative w-full h-40 my-3 object-contain">
         <Image
           fill
           priority
@@ -41,7 +41,7 @@ const CarCard = ({ car }: ICarCard) => {
         />
       </div>
 
-      <div className="relative flex w-full my-2">
+      <div className="relative flex w-full mt-2">
         <div className="flex group-hover:invisible w-full justify-between text-gray">
           <div className="flex flex-col justify-center items-center gap-2">
             <Image
@@ -54,18 +54,12 @@ const CarCard = ({ car }: ICarCard) => {
               {transmission === "a" ? "Automatic" : "Manual"}
             </p>
           </div>
-        </div>
-      </div>
-      <div className="relative flex w-full mt-2">
-        <div className="flex group-hover:invisible w-full justify-between text-gray">
+
           <div className="flex flex-col justify-center items-center gap-2">
             <Image src="/tire.svg" width={20} height={20} alt="tire" />
             <p className="text-[14px]">{drive.toUpperCase()}</p>
           </div>
-        </div>
-      </div>
-      <div className="relative flex w-full mt-2">
-        <div className="flex group-hover:invisible w-full justify-between text-gray">
+
           <div className="flex flex-col justify-center items-center gap-2">
             <Image src="/gas.svg" width={20} height={20} alt="gas" />
             <p className="text-[14px]">{city_mpg} MPG</p>
