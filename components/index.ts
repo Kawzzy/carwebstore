@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import CarCard from "./CarCard";
 import SearchBar from "./SearchBar";
+import CarDetails from "./CarDetails";
 import CustomButton from "./CustomButton";
 import SearchManufacturer from "./SearchManufacturer";
 
@@ -12,6 +13,7 @@ export {
   Footer,
   CarCard,
   SearchBar,
+  CarDetails,
   CustomButton,
   SearchManufacturer,
 };
