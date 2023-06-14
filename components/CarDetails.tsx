@@ -1,9 +1,10 @@
 "use client";
 
-import { ICar } from "@/types";
-import { Dialog, Transition } from "@headlessui/react";
 import Image from "next/image";
+import { ICar } from "@/types";
 import { Fragment } from "react";
+import { generateCarImageUrl } from "@/utils";
+import { Dialog, Transition } from "@headlessui/react";
 
 interface ICarDetails {
   isOpen: boolean;
@@ -59,7 +60,7 @@ const CarDetails = ({ isOpen, closeModal, car }: ICarDetails) => {
                       <Image
                         fill
                         priority
-                        src="/hero.png"
+                        src={generateCarImageUrl(car)}
                         alt="car model"
                         className="object-contain"
                       />
@@ -70,7 +71,7 @@ const CarDetails = ({ isOpen, closeModal, car }: ICarDetails) => {
                         <Image
                           fill
                           priority
-                          src="/hero.png"
+                          src={generateCarImageUrl(car, "29")}
                           alt="car model"
                           className="object-contain"
                         />
@@ -79,7 +80,7 @@ const CarDetails = ({ isOpen, closeModal, car }: ICarDetails) => {
                         <Image
                           fill
                           priority
-                          src="/hero.png"
+                          src={generateCarImageUrl(car, "33")}
                           alt="car model"
                           className="object-contain"
                         />
@@ -88,7 +89,7 @@ const CarDetails = ({ isOpen, closeModal, car }: ICarDetails) => {
                         <Image
                           fill
                           priority
-                          src="/hero.png"
+                          src={generateCarImageUrl(car, "13")}
                           alt="car model"
                           className="object-contain"
                         />

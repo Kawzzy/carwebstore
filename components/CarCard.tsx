@@ -1,11 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import { ICar } from "@/types";
 import { useState } from "react";
-import { calculateCarRent } from "@/utils";
-import Image from "next/image";
-import CustomButton from "./CustomButton";
 import CarDetails from "./CarDetails";
+import CustomButton from "./CustomButton";
+import { calculateCarRent, generateCarImageUrl } from "@/utils";
 
 interface ICarCard {
   car: ICar;
@@ -36,7 +36,7 @@ const CarCard = ({ car }: ICarCard) => {
         <Image
           fill
           priority
-          src="/hero.png"
+          src={generateCarImageUrl(car)}
           alt="car model"
           className="object-contain"
         />
