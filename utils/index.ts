@@ -33,9 +33,19 @@ export const generateCarImageUrl = (car: ICar, angle?: string) => {
   return `${url}`;
 };
 
+export const updateSearchParams = (type: string, value: string) => {
+  const searchParams = new URLSearchParams(window.location.search);
+
+  searchParams.set(type, value);
+
+  const newPathname = `${window.location.pathname}?${searchParams.toString()}`;
+
+  return newPathname;
+};
+
 export async function fetchCars(filters: ICarFilters) {
   console.log("filters", filters);
-  const { manufacturer, model } = filters;
+  const { manufacturer, model, fuel, year } = filters;
 
   const headers = {
     "X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPID_API_KEY || "",
@@ -43,7 +53,7 @@ export async function fetchCars(filters: ICarFilters) {
   };
 
   const response = await fetch(
-    `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&model=${model}`,
+    `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&model=${model}&fuel_type=${fuel}&year=${year}`,
     {
       headers: headers,
     }

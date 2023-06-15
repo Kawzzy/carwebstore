@@ -1,11 +1,14 @@
 import { fetchCars } from "@/utils";
 import { IHomeParams } from "@/types";
-import { CarCard, Hero, SearchBar } from "@/components";
+import { fuels, yearsOfProduction } from "@/constants";
+import { CarCard, CustomFilter, Hero, SearchBar } from "@/components";
 
 export default async function Home({ searchParams }: IHomeParams) {
   const allCars = await fetchCars({
     manufacturer: searchParams.manufacturer || "",
     model: searchParams.model || "",
+    fuel: searchParams.fuel || "",
+    year: searchParams.year || new Date().getFullYear(),
   });
 
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
@@ -23,7 +26,10 @@ export default async function Home({ searchParams }: IHomeParams) {
         <div className="home__filters">
           <SearchBar />
 
-          <div className="home__filter-container">{/* Custom filters */}</div>
+          <div className="home__filter-container">
+            <CustomFilter title="fuel" options={fuels} />
+            <CustomFilter title="year" options={yearsOfProduction} />
+          </div>
 
           {!isDataEmpty ? (
             <section>

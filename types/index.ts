@@ -31,10 +31,22 @@ export interface ICar {
 }
 
 export interface ICarFilters {
-  manufacturer: string;
-  model: string;
+  manufacturer?: string;
+  model?: string;
+  fuel?: string;
+  year?: number;
 }
 
 export interface IHomeParams {
   searchParams: ICarFilters;
+}
+
+export interface IOptionsProps {
+  title: string;
+  value: string;
+}
+
+export interface ICustomFilter {
+  title: string;
+  options: IOptionsProps[];
 }
