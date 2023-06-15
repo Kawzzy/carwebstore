@@ -29,3 +29,12 @@ export interface ICar {
   transmission: string;
   year: number;
 }
+
+export interface ICarFilters {
+  manufacturer: string;
+  model: string;
+}
+
+export interface IHomeParams {
+  searchParams: ICarFilters;
+}

@@ -29,22 +29,22 @@ const SearchBar = () => {
       return alert("Please fill the search bars");
     }
 
-    updateSearchParams(model.toLowerCase(), manufacturer.toLowerCase());
+    updateSearchParams(manufacturer.toLowerCase(), model.toLowerCase());
   };
 
-  const updateSearchParams = (model: string, manufacturer: string) => {
+  const updateSearchParams = (manufacturer: string, model: string) => {
     const searchParams = new URLSearchParams(window.location.search);
-
-    if (model) {
-      searchParams.set("model", model);
-    } else {
-      searchParams.delete("model");
-    }
 
     if (manufacturer) {
       searchParams.set("manufacturer", manufacturer);
     } else {
       searchParams.delete("manufacturer");
+    }
+
+    if (model) {
+      searchParams.set("model", model);
+    } else {
+      searchParams.delete("model");
     }
 
     const newPathname = `${
