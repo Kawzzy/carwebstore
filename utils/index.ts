@@ -45,7 +45,7 @@ export const updateSearchParams = (type: string, value: string) => {
 
 export async function fetchCars(filters: ICarFilters) {
   console.log("filters", filters);
-  const { manufacturer, model, fuel, year } = filters;
+  const { manufacturer, model, fuel, year, limit } = filters;
 
   const headers = {
     "X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPID_API_KEY || "",
@@ -53,7 +53,7 @@ export async function fetchCars(filters: ICarFilters) {
   };
 
   const response = await fetch(
-    `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&model=${model}&fuel_type=${fuel}&year=${year}`,
+    `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&model=${model}&fuel_type=${fuel}&year=${year}&limit=${limit}`,
     {
       headers: headers,
     }

@@ -2,6 +2,7 @@ import Hero from "./Hero";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import CarCard from "./CarCard";
+import ShowMore from "./ShowMore";
 import SearchBar from "./SearchBar";
 import CarDetails from "./CarDetails";
 import CustomButton from "./CustomButton";
@@ -13,6 +14,7 @@ export {
   Navbar,
   Footer,
   CarCard,
+  ShowMore,
   SearchBar,
   CarDetails,
   CustomButton,

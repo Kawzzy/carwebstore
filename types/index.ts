@@ -35,6 +35,7 @@ export interface ICarFilters {
   model?: string;
   fuel?: string;
   year?: number;
+  limit?: number;
 }
 
 export interface IHomeParams {
@@ -49,4 +50,9 @@ export interface IOptionsProps {
 export interface ICustomFilter {
   title: string;
   options: IOptionsProps[];
+}
+
+export interface IShowMore {
+  pageNumber: number;
+  isNext: boolean;
 }
